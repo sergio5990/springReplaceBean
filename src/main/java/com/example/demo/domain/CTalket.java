@@ -1,8 +1,8 @@
 package com.example.demo.domain;
 
-public class CName implements Name {
+public class CTalket implements Talker {
     @Override
-    public String name() {
+    public String sayName() {
         return "C";
     }
 }

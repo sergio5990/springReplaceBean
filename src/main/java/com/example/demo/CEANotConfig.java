@@ -1,14 +1,15 @@
 package com.example.demo;
 
-import com.example.demo.domain.BTalker;
+import com.example.demo.domain.CTalket;
 import com.example.demo.domain.Talker;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class BConf {
+class CEANotConfig extends ANotConfig {
+    @Override
     @Bean
-    Talker createBean(){
-        return new BTalker();
+    protected Talker createBean(){
+        return new CTalket();
     }
 }

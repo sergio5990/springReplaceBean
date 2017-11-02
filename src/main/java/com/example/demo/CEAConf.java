@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.domain.CName;
-import com.example.demo.domain.Name;
+import com.example.demo.domain.CTalket;
+import com.example.demo.domain.Talker;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class CEAConf extends AConf{
     @Bean
     @Override
-    Name name(){
-        return new CName();
+    Talker createBean(){
+        return new CTalket();
     }
 }
