@@ -3,7 +3,6 @@ package com.example.demo.ok;
 import com.example.demo.ATalker;
 import com.example.demo.BTalker;
 import com.example.demo.Talker;
-import com.example.demo.ok.InjectByNameTest.AConfig;
 import com.example.demo.ok.InjectByNameTest.BConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = {AConfig.class, BConfig.class})
+@ContextConfiguration(classes = {BConfig.class})
 public class InjectByNameTest {
 //    @Autowired not autowired
     private Talker talker;
@@ -41,7 +40,7 @@ public class InjectByNameTest {
         assertNotNull(beans.get("createBean"));
         assertNotNull(beans.get("customName"));
 
-        assertEquals("A", createBean.sayName());
+        assertEquals("B", createBean.sayName());
         assertEquals("B", customName.sayName());
 
     }
@@ -55,9 +54,10 @@ public class InjectByNameTest {
     }
 
     @Configuration
-    static class BConfig{
-        @Bean
-        Talker customName(){
+    static class BConfig extends AConfig{
+        @Override
+        @Bean("customName")
+        Talker createBean(){
             return new BTalker();
         }
     }
