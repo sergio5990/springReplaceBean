@@ -11,15 +11,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = {AConf.class})
+@ContextConfiguration(classes = {CEAProtConf.class})
 @SpringBootTest
-public class ATest {
-	@Autowired
-	private Name name;
+public class CEAProtConfTest {
+    @Autowired
+    private Name name;
 
-	@Test
-	public void contextLoads() {
-		assertEquals("A", name.name());
-	}
+    @Test
+    public void contextLoads() {
+        assertEquals("A", name.name());
+    }
 
 }

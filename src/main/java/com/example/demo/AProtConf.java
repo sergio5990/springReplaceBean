@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AConf {
+class AProtConf {
     @Bean
-    Name name(){
+    protected Name name(){
         return new AName();
     }
 }

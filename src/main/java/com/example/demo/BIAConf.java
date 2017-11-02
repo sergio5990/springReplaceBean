@@ -2,11 +2,11 @@ package com.example.demo;
 
 import com.example.demo.domain.BName;
 import com.example.demo.domain.Name;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-@Configurable
+@Configuration
 @Import(AConf.class)
 public class BIAConf {
     @Bean
