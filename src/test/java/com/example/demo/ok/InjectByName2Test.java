@@ -39,7 +39,7 @@ public class InjectByName2Test {
     }
 
     @Configuration
-    static class BCustomNameExtendsAConfig extends AConfig {
+    static class BConfig{
 
         @Bean("customName")
         Talker createBean() {
@@ -48,10 +48,10 @@ public class InjectByName2Test {
     }
 
     @Configuration
-    @Import({BCustomNameExtendsAConfig.class})
+    @Import({BConfig.class, AConfig.class})
     static class ConstructorName {
         public ConstructorName(Talker createBean, Talker customName) {
-            assertEquals("B", createBean.sayName());
+            assertEquals("A", createBean.sayName());
             assertEquals("B", customName.sayName());
         }
     }
